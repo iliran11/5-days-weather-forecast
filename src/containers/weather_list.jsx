@@ -7,19 +7,23 @@ class WeatherList extends Component {
         const name = citydata.city.name;
         const temp = [];
         const pressure = [];
+        const humidity = [];
         citydata.list.map((weatherSnapshot) => {
             pressure.push(weatherSnapshot.main.pressure);
-            temp.push(weatherSnapshot.main.temp);
+            //convert kalvin to celcius
+            temp.push(weatherSnapshot.main.temp - 273.15);
+            humidity.push(weatherSnapshot.main.humidity);
         });
         return (
             <tr key={name}>
               <td>{name}</td>
               <td>
-                <Chart data={temp} color="orange"/>
+                <Chart data={temp} color="orange" type = "celcius"/>
               </td>
               <td>
-                <Chart data={pressure} color="red"/>
+                <Chart data={pressure} color="red" type = "hPa"/>
               </td>
+              <td><Chart data={humidity} color="green" type = "%"/></td>
             </tr>
         )
     }
@@ -34,7 +38,7 @@ class WeatherList extends Component {
                 </tr>
               </thead>
               <tbody>
-                    {this.props.weather.map(this.renderWeather)}
+                {this.props.weather.map(this.renderWeather)}
                 </tbody>
             </table>
         )

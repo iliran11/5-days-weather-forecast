@@ -3,10 +3,11 @@ export const FETCH_WEATHER = 'FETCH_WEATHER';
 
 const API_KEY = '8135e77b2c9b81be584556d62613e2c6';
 const ROOT_URL = 'http://api.openweathermap.org/data/2.5/forecast?q='
+const COUNTRY_CODE = 'IL'
 
 export function fetchWeather(city) {
     console.log (city);
-    const url = `${ROOT_URL}${city},us&appid=${API_KEY}`;
+    const url = `${ROOT_URL}${city},${COUNTRY_CODE}&appid=${API_KEY}`;
     const request = axios.get(url);
     return {type: FETCH_WEATHER, payload: request}
 }

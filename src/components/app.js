@@ -6,7 +6,7 @@ export default class App extends Component {
     render() {
         return (
             <div>
-              <SearchBar/>
+              <SearchBar initialState = {["tel aviv", "haifa"]}/>
               <WeatherList/>
             </div>
         );
