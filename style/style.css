@@ -1,6 +1,18 @@
-th:nth-child(1) {
-  width:10%;
+body {
+  padding:20px;
 }
-th:nth-child(2),th:nth-child(3), th:nth-child(4) {
-  width: 30%;
+td {
+  width:25%;
+}
+.input-group {
+  margin: 20px 0px;
+}
+
+td:first-of-type, , svg{
+  height:100%;
+  width:100%;
+}
+
+td:first-of-type > div  {
+height:107px;
 }
