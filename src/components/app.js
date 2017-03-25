@@ -6,7 +6,7 @@ export default class App extends Component {
     render() {
         return (
             <div>
-              <h1>Type a City  and get a 5 day forcat!</h1>
+              <h1>Type a City  and get a 5 day forcast!</h1>
               <SearchBar initialState = {["tel aviv", "haifa"]}/>
               <WeatherList/>
             </div>
